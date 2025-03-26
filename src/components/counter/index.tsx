@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react'
 import React from 'react'
 import Button from '@/components/buttons/Button'
 
-const useCounter = () => {
+export const useCounter = () => {
     const [count, setCount] = useState(0)
 
     const eventCount = useCallback(() => {
