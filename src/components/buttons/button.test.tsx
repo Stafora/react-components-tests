@@ -56,7 +56,7 @@ describe('Render Button', () => {
     test("Button is disabled", async () => {
         const handleClick = vi.fn();
         
-        render(<Button disabled onClick={handleClick} type={'button'} viewType={'primary'}>It is Button</Button>);
+        render(<Button disabled eventClick={handleClick} type={'button'} viewType={'primary'}>It is Button</Button>);
     
         const button = screen.getByRole("button");
         
