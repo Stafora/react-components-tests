@@ -3,6 +3,7 @@ import React, { ReactNode } from "react";
 
 interface PropsInterface {
     children: ReactNode,
+    disabled?: boolean,
     className?: string
     type: 'button' | 'submit'
     viewType: 'primary' | 'secondary' | 'danger'
