@@ -6,8 +6,8 @@ import React, { act } from "react";
 
 describe('Render Component', () => {
     test("Counter component has default text", () => {
-        render(<Counter />);
-        expect(screen.getByText(/count is 0/i)).toBeInTheDocument();
+        render(<Counter />)
+        expect(screen.getByText(/count is 0/i)).toBeInTheDocument()
     })
     test("Counter snapshot", () => {
         const { asFragment } = render(<Counter />)
@@ -27,7 +27,6 @@ describe('useCounter', () => {
 
     it('должен увеличивать счётчик при вызове eventCount', () => {
         const { result } = renderHook(() => useCounter())
-        console.log(result)
 
         act(() => {
             result.current.eventCount()
