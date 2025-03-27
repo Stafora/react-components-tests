@@ -3,7 +3,7 @@ import React, { ReactNode } from "react";
 
 interface PropsInterface {
     children: ReactNode,
-    className: string
+    className?: string
     type: 'button' | 'submit'
     viewType: 'primary' | 'secondary' | 'danger'
     eventClick?: () => void
