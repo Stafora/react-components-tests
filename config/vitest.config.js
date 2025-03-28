@@ -6,7 +6,7 @@ export default defineConfig({
 plugins: [react()],
 resolve: {
         alias: {
-            '@': fileURLToPath(new URL('./src', import.meta.url)),
+            '@': fileURLToPath(new URL('../src', import.meta.url)),
             buffer: 'buffer',
             process: 'process/browser',
         }
@@ -14,6 +14,6 @@ resolve: {
     test: {
         globals: true,
         environment: "jsdom",
-        setupFiles: "./vitest.setup.ts",
+        setupFiles: "./config/vitest.setup.ts",
     }
 });

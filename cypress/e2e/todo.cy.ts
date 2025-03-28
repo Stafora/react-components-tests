@@ -2,7 +2,7 @@
 
 describe('Todo', () => {
     beforeEach(() => {
-        cy.visit('http://localhost:3000/todo')
+        cy.visit('/todo')
       })
 
     it('Component loading on page', () => {
