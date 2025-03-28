@@ -4,13 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "test": "vitest",
-    "test:watch": "vitest --watch",
-    "cypress": "npx cypress open"
+    "dev": "vite --config ./config/vite.config.ts",
+    "build": "tsc -b ./config/tsconfig.json && vite build --config ./config/vite.config.ts",
+    "lint": "eslint --config ./config/eslint.config.js",
+    "preview": "vite preview --config ./config/vite.config.ts",
+    "test": "vitest --config ./config/vitest.config.js",
+    "test:watch": "vitest --watch --config ./config/vitest.config.js",
+    "cypress": "npx cypress open --config-file ./config/cypress.config.ts"
   },
   "dependencies": {
     "@testing-library/user-event": "^14.6.1",

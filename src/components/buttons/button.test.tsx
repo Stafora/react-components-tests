@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react"
-import { test, expect } from "vitest"
+import { test, expect, vi } from "vitest"
 import userEvent from "@testing-library/user-event";
 
 import React from "react";
