@@ -5,16 +5,17 @@
     "moduleResolution": "node",
     "jsx": "react",
     "strict": true,
+    "noEmitOnError": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "../dist",
+    "outDir": "dist",
     "noEmit": true,
-    "baseUrl": "../",
+    "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     },
     "types": ["vitest/globals", "@testing-library/jest-dom"]
   },
-  "include": ["../src"]
+  "include": ["src"]
 }
