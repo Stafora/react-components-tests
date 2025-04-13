@@ -1,45 +1,44 @@
 import js from "@eslint/js";
 import globals from "globals";
-import vue from "eslint-plugin-vue";
 import tseslint from "@typescript-eslint/eslint-plugin";
 import tsparser from "@typescript-eslint/parser";
+import react from "eslint-plugin-react";
 
 export default [
   {
-    files: ["src/**/*.{js,ts,vue}"], // Ограничиваем проверку только `src/`
+    files: ["src/**/*.{js,ts,tsx}"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
       globals: globals.browser,
-    },
-  },
-  {
-    files: ["src/**/*.js"],
-    rules: { ...js.configs.recommended.rules },
-  },
-  {
-    files: ["src/**/*.ts"],
-    languageOptions: {
       parser: tsparser,
       parserOptions: {
+        ecmaFeatures: { jsx: true },
         project: "./tsconfig.json",
         tsconfigRootDir: import.meta.dirname,
       },
     },
-    plugins: { "@typescript-eslint": tseslint },
-    rules: tseslint.configs.recommended?.rules || {},
-  },
-  {
-    files: ["src/**/*.vue"],
-    plugins: { vue },
-    languageOptions: {
-      parser: tsparser,
-      parserOptions: {
-        extraFileExtensions: [".vue"],
-        project: "./tsconfig.json",
-        tsconfigRootDir: import.meta.dirname,
+    plugins: {
+      "@typescript-eslint": tseslint,
+      react,
+    },
+    rules: {
+      ...js.configs.recommended.rules,
+      ...tseslint.configs.recommended.rules,
+      ...react.configs.recommended.rules,
+    },
+    settings: {
+      react: {
+        version: "detect",
       },
     },
-    rules: vue.configs["vue3-recommended"]?.rules || {},
+  },
+  {
+    files: ["**/*.test.{js,ts,tsx}", "**/__tests__/**/*.{js,ts,tsx}"],
+    languageOptions: {
+      globals: {
+        ...globals.jest
+      },
+    },
   },
 ];
