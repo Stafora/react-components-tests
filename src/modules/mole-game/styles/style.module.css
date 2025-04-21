@@ -1,0 +1,34 @@
+.title{
+    text-align: center;
+    font-wight: 700;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+.holes{
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    width: 600px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    margin-bottom: 15px;
+}
+.hole{
+    height: 150px;
+    border: 1px solid #fff;
+    font-weight: bold;
+    align-content: center;
+    text-align: center;
+}
+.button{
+    border: 1px solid #fff;
+    font-size: 16px;
+    padding: 4px 6px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+.score{
+    text-align: center;
+}

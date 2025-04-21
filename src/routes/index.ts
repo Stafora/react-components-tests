@@ -1,5 +1,6 @@
 import HomePage from '@/pages/home'
 import TodoPage from '@/pages/todo'
+import MolePage from '@/pages/mole'
 
 export const routes = [
     {
@@ -11,5 +12,10 @@ export const routes = [
         path: '/todo',
         name: 'Todo',
         component: TodoPage
+    },
+    {
+        path: '/mole',
+        name: 'Mole',
+        component: MolePage
     }
 ];
